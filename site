@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dolly Llama Games</title>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom right, #ffffff, #7048e8, #7f3f98, #ff2b6d, #ffcb00);
+            font-family: sans-serif;
+        }
+
+        .header {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 1em;
+        }
+
+        .header img {
+            max-height: 50px;
+        }
+
+        .header h1 {
+            font-size: 4em;
+            font-family: 'Bubblegum Sans', cursive;
+            color: #fff;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1em;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 2em 0;
+        }
+
+        .intro h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: #fff;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        .intro p {
+            font-size: 1.5em;
+            margin: 0;
+            color: #fff;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        .games {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .game {
+            width: 200px;
+            margin: 1em;
+            text-align: center;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px #ccc;
+            transition: transform 0.5s;
+        }
+
+        .game:hover {
+            transform: scale(1.1);
+        }
+
+        .game img {
+            max-width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .game h3 {
+            font-size: 1.5em;
+            margin-top: 0.5em;
+            margin-bottom: 0;
+        }
+
+        .game p {
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+
+        .footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://i.imgur.com/sVju8Ww.png" alt="Dolly Llama Logo">
+        <h1>Dolly Llama Games</h1>
+    </header>
+    <div class="container">
+        <div class="intro">
+            <h2>Welcome to Dolly Llama Games</h2>
+            <p>Explore our collection of fun and exciting games!</p>
+        </div>
+        <div class="games">
+            <div class="game">
+                <a href="#">
+                    <img src="https://i.imgur.com/3Fq8f
+                    
+                    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Matching Game</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Matching Game</h1>
+      <div class="grid">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+const cards = document.querySelectorAll('.card');
+
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
+function flipCard() {
+  if (lockBoard) return;
+  if (this === firstCard) return;
+
+  this.classList.add('flipped');
+
+  if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+    return;
+  }
+
+  secondCard = this;
+
+  checkForMatch();
+}
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? disableCards() : unflipCards();
+}
+
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
+
+  resetBoard();
+}
+
+function unflipCards() {
+  lockBoard = true;
+
+  setTimeout(() => {
+    firstCard.classList.remove('flipped');
+    secondCard.classList.remove('flipped');
+
+    resetBoard();
+  }, 1500);
+}
+
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false
